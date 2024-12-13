@@ -41,6 +41,17 @@ def user_input():
 
     if user_name:
 
+        st.markdown("""
+             <style>
+                 .stMultiSelect [data-baseweb="select"] span{
+                     max-width: none !important;
+                     white-space: normal !important;
+                     overflow: visible !important;
+                     text-overflow: clip !important;
+                 }
+             </style>
+             """, unsafe_allow_html=True)
+
         # Create user input form for player selections
         with st.form(key='team_selection'):
             # QB Selection
