@@ -57,14 +57,6 @@ def validate_team_selection(selected_players):
 
 def main():
 
-    hide_streamlit_style = """
-                <style>
-                #MainMenu {visibility: hidden;}
-                footer {visibility: hidden;}
-                </style>
-                """
-    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
     # st.title("Fantasy Team Picker")
     st.markdown("""#### <b><u>Player Selection</u></b>""", unsafe_allow_html=True)
 
