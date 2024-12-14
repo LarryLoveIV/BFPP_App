@@ -1,6 +1,13 @@
 import streamlit as st
 import functions as func
 
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.markdown("""## <b><u>2024 Burholme Fantasy Playoff Pool</u></b>""", unsafe_allow_html=True)
 st.markdown("""**One entry per person - $20 Venmo @Larry-LoveIV. Build one team to ride throughout the playoffs and get the highest cumulative score through the Super Bowl.**
 
