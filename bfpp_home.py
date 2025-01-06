@@ -8,7 +8,7 @@ st.markdown("""**One entry per person - $20 Venmo @Larry-LoveIV. Build one team 
 
 **1st - Remaining pot \(\$460 if we reach 30 entries\)  \n2nd - \$100  \n3rd - \$40**
 
-**Submissions must be in before kickoff of the first wildcard playoff game.**""")
+**Submissions must be in before kickoff of the first wildcard playoff game: Saturday Jan. 11th @ 4:30PM EST.**""")
 st.markdown("""#### <b><u>Team Building Rules</u></b>  
 Fill the positions below using players from the all the playoff teams - you can use no more than 2 players from the 
 same team. i.e: you can take Goff and St. Brown, but you can't have Goff, St. Brown, and Gibbs/Lions DST/Jake Bates.
@@ -104,6 +104,8 @@ with col6:
 * 31+ Points allowed  = -5
 * Takeaways = 2
 * Touchdowns = 6""", unsafe_allow_html=True)
+
+st.markdown("""**If you encounter any issues - missing players, players on the wrong team, you want to redo submission, payment issues - just text me: 267-334-6282**""")
 
 if __name__ == '__main__':
     func.main()
