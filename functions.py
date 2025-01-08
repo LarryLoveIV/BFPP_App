@@ -224,7 +224,7 @@ def main():
                     if save_team_to_sheets(user_name, all_selections):
                         st.success(f"Team successfully created and saved for {user_name}!")
                         # Display final team
-                        st.write("Your Team:")
+                        st.write("Take a screenshot of your team:")
                         for player in all_selections:
                             player_info = df[df['Player_Team'] == player].iloc[0]
                             st.write(f"{player}")
