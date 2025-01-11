@@ -2,7 +2,7 @@ import streamlit as st
 import functions as func
 
 st.markdown("""## <b><u>2024 Burholme Fantasy Playoff Pool</u></b>""", unsafe_allow_html=True)
-st.markdown("""**One entry per person - $20 Venmo @Larry-LoveIV. Build one team to ride throughout the playoffs and get the highest cumulative score through the Super Bowl.**
+st.markdown("""**One entry per person - $20 Venmo @Larry-LoveIV or CashApp $LarryLoveIV. Build one team to ride throughout the playoffs and get the highest cumulative score through the Super Bowl.**
 
 **Top 3 cumulative scores will earn prizes. Last season we had 29 entries for a total pot of $580. Let's try to get a bigger pot this year - if we do, the prizes will look like this:**
 
