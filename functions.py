@@ -5,8 +5,8 @@ import datetime
 
 gc = gs.service_account_from_dict(st.secrets.cred)
 ## gspread - Player Pool
-sh1 = gc.open('2024 Playoff Fantasy Football Player Pool')
-ws1 = sh1.worksheet('2024 Player Pool')
+sh1 = gc.open('2025 Playoff Fantasy Football Player Pool')
+ws1 = sh1.worksheet('2025 Player Pool')
 ## entry sheet
 # sh2 = gc.open('2024 BFPP Submissions')
 # ws2 = sh2.worksheet('Sheet 1')
