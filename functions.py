@@ -15,7 +15,7 @@ ws1 = sh1.worksheet('2025 Player Pool')
 def connect_to_google_sheets():
     try:
         # gc = gs.service_account_from_dict(creds)
-        sh2 = gc.open('2024 BFPP Submissions')
+        sh2 = gc.open('2025 BFPP Submissions')
         ws2 = sh2.worksheet('Entries')
 
         return ws2
