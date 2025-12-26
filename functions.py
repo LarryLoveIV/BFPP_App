@@ -48,7 +48,7 @@ def save_team_to_sheets(user_name, selected_players):
             selected_players[9],  # WR4
             selected_players[10],  # TE1
             selected_players[11],  # TE2
-            selected_players[12],  # Flex 1.5
+            selected_players[12],  # Flex -- Removed 1.5x for 2025
             selected_players[13],  # Flex
             selected_players[14],  # K
             selected_players[15],  # DST
@@ -150,19 +150,20 @@ def main():
         st.markdown("")
         st.markdown("")
 
-        # Flex Selection (1 player from RB/WR/TE) 1.5x
-        st.header("Flex (RB, WR, or TE) Selection - 1.5x Points!!")
-        # Remove already selected players from options
-        selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes
-        flex_options1 = df[(~df['Player_Team'].isin(selected_players_so_far)) & (df['Position'].isin(['RB','WR','TE']))]['Player_Team'].tolist()
-        selected_flex1 = st.multiselect("Select 1 Flex 1.5x:", flex_options1, max_selections=1)
+        # REMOVED IN 2025 - CHANGED TO 2 REGULAR FLEX
+        # # Flex Selection (1 player from RB/WR/TE) 1.5x
+        # st.header("Flex (RB, WR, or TE) Selection - 1.5x Points!!")
+        # # Remove already selected players from options
+        # selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes
+        # flex_options1 = df[(~df['Player_Team'].isin(selected_players_so_far)) & (df['Position'].isin(['RB','WR','TE']))]['Player_Team'].tolist()
+        # selected_flex1 = st.multiselect("Select 1 Flex 1.5x:", flex_options1, max_selections=1)
 
         # Flex Selection (1 player from RB/WR/TE)
-        st.header("Flex (RB, WR, or TE) Selection (regular scoring)")
+        st.header("Flex (RB, WR, or TE) Selection")
         # Remove already selected players from options
-        selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex1
+        selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes #+ selected_flex1
         flex_options2 = df[(~df['Player_Team'].isin(selected_players_so_far)) & (df['Position'].isin(['RB','WR','TE']))]['Player_Team'].tolist()
-        selected_flex2 = st.multiselect("Select 1 Flex:", flex_options2, max_selections=1)
+        selected_flex2 = st.multiselect("Select 2 Flex:", flex_options2, max_selections=2)
 
         # Kicker (1 player from K)
         st.header("Kicker Selection")
@@ -181,7 +182,7 @@ def main():
         st.markdown("")
 
         # Validate team selections
-        all_selections = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex1 + selected_flex2 + selected_k + selected_dst
+        all_selections = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex2 + selected_k + selected_dst #+ selected_flex1
 
         # Button to finalize team
         if st.button("Validate Team"):
@@ -193,10 +194,10 @@ def main():
                 st.error("Please select exactly 4 Wide Receivers")
             elif len(selected_tes) != 2:
                 st.error("Please select exactly 2 Tight Ends")
-            elif len(selected_flex1) != 1:
-                st.error("Please select exactly 1 Flex 1.5x Player")
-            elif len(selected_flex2) != 1:
-                st.error("Please select exactly 1 Flex (regular scoring) Player")
+            # elif len(selected_flex1) != 1:
+            #     st.error("Please select exactly 1 Flex 1.5x Player")
+            elif len(selected_flex2) != 2:
+                st.error("Please select exactly 2 Flex Players")
             elif len(selected_k) != 1:
                 st.error("Please select exactly 1 Kicker")
             elif len(selected_dst) != 1:
