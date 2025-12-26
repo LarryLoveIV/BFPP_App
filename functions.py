@@ -88,150 +88,150 @@ def validate_team_selection(selected_players):
 
     return violations
 
-#
-# def main():
-#
-#     # User name input
-#     user_name = st.text_input("Please enter your name:")
-#
-#     if user_name:
-#
-#         st.markdown("""
-#              <style>
-#                  .stMultiSelect [data-baseweb="select"] span{
-#                      max-width: none !important;
-#                      white-space: normal !important;
-#                      overflow: visible !important;
-#                      text-overflow: clip !important;
-#                  }
-#              </style>
-#              """, unsafe_allow_html=True)
-#         # Initialize session state for selections
-#         if 'selected_players' not in st.session_state:
-#             st.session_state.selected_players = []
-#
-#         st.markdown("""#### <b><u>Player Selection</u></b>""", unsafe_allow_html=True)
-#         st.write("**Ignore the the message that says 'You can only select up to x options. Remove an option first.' \n"
-#                  "That message will pop up when you've picked the proper amount of players in that section.")
-#
-#         # QB Selection (2 players)
-#         st.header("Quarterback Selection")
-#         qb_options = df[df['Position'] == 'QB']['Player_Team'].tolist()
-#         selected_qb = st.multiselect("Select 2 QBs:", qb_options, max_selections=2)
-#
-#         st.markdown("")
-#         st.markdown("")
-#         st.markdown("")
-#
-#         # RB Selection (4 players)
-#         st.header("Running Back Selection")
-#         rb_options = df[df['Position'] == 'RB']['Player_Team'].tolist()
-#         selected_rbs = st.multiselect("Select 4 RBs:", rb_options, max_selections=4)
-#
-#         st.markdown("")
-#         st.markdown("")
-#         st.markdown("")
-#
-#         # WR Selection (4 players)
-#         st.header("Wide Receiver Selection")
-#         wr_options = df[df['Position'] == 'WR']['Player_Team'].tolist()
-#         selected_wrs = st.multiselect("Select 4 WRs:", wr_options, max_selections=4)
-#
-#         st.markdown("")
-#         st.markdown("")
-#         st.markdown("")
-#
-#         # te Selection (1 player)
-#         st.header("Tight End Selection")
-#         te_options = df[df['Position'] == 'TE']['Player_Team'].tolist()
-#         selected_tes = st.multiselect("Select 2 TEs:", te_options, max_selections=2)
-#
-#         st.markdown("")
-#         st.markdown("")
-#         st.markdown("")
-#
-#         # Flex Selection (1 player from RB/WR/TE) 1.5x
-#         st.header("Flex (RB, WR, or TE) Selection - 1.5x Points!!")
-#         # Remove already selected players from options
-#         selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes
-#         flex_options1 = df[(~df['Player_Team'].isin(selected_players_so_far)) & (df['Position'].isin(['RB','WR','TE']))]['Player_Team'].tolist()
-#         selected_flex1 = st.multiselect("Select 1 Flex 1.5x:", flex_options1, max_selections=1)
-#
-#         # Flex Selection (1 player from RB/WR/TE)
-#         st.header("Flex (RB, WR, or TE) Selection (regular scoring)")
-#         # Remove already selected players from options
-#         selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex1
-#         flex_options2 = df[(~df['Player_Team'].isin(selected_players_so_far)) & (df['Position'].isin(['RB','WR','TE']))]['Player_Team'].tolist()
-#         selected_flex2 = st.multiselect("Select 1 Flex:", flex_options2, max_selections=1)
-#
-#         # Kicker (1 player from K)
-#         st.header("Kicker Selection")
-#         k_options = df[df['Position'] == 'K']['Player_Team'].tolist()
-#         selected_k = st.multiselect("Select 1 K:", k_options, max_selections=1)
-#
-#         # DST (1 player from K)
-#         st.header("Defense/Special Teams Selection")
-#         dst_options = df[df['Position'] == 'DST']['Player_Team'].tolist()
-#         selected_dst = st.multiselect("Select 1 DST:", dst_options, max_selections=1)
-#
-#         st.markdown("")
-#         st.markdown("")
-#         st.markdown("")
-#         st.markdown("")
-#         st.markdown("")
-#
-#         # Validate team selections
-#         all_selections = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex1 + selected_flex2 + selected_k + selected_dst
-#
-#         # Button to finalize team
-#         if st.button("Validate Team"):
-#             if len(selected_qb) != 2:
-#                 st.error("Please select exactly 2 Quarterback")
-#             elif len(selected_rbs) != 4:
-#                 st.error("Please select exactly 4 Running Backs")
-#             elif len(selected_wrs) != 4:
-#                 st.error("Please select exactly 4 Wide Receivers")
-#             elif len(selected_tes) != 2:
-#                 st.error("Please select exactly 2 Tight Ends")
-#             elif len(selected_flex1) != 1:
-#                 st.error("Please select exactly 1 Flex 1.5x Player")
-#             elif len(selected_flex2) != 1:
-#                 st.error("Please select exactly 1 Flex (regular scoring) Player")
-#             elif len(selected_k) != 1:
-#                 st.error("Please select exactly 1 Kicker")
-#             elif len(selected_dst) != 1:
-#                 st.error("Please select exactly 1 Defense/Special Teams")
-#             else:
-#                 # Check for team violations
-#                 team_violations = validate_team_selection(all_selections)
-#
-#                 if team_violations:
-#                     # Detailed error message about team violations
-#                     error_message = "Error: You have too many players from the following team(s):\n"
-#                     for team, players in team_violations.items():
-#                         error_message += f"- {team}: {', '.join(players)}\n"
-#                     st.error(error_message)
-#                 # else:
-#                 #     st.success(f"Team successfully created for {user_name}!")
-#                 #     # Display final team
-#                 #     st.write("Your Team:")
-#                 #     for player in all_selections:
-#                 #         player_info = df[df['Player_Team'] == player].iloc[0]
-#                 #         st.write(f"{player} - {player_info['Position']}")
-#
-#                 else:
-#                     # Attempt to save to Google Sheets
-#                     if save_team_to_sheets(user_name, all_selections):
-#                         st.success(f"Team successfully created and saved for {user_name}!")
-#                         # Display final team
-#                         st.write("Take a screenshot of your team:")
-#                         for player in all_selections:
-#                             player_info = df[df['Player_Team'] == player].iloc[0]
-#                             st.write(f"{player}")
-#                     else:
-#                         st.error("Failed to save team to Google Sheets")
-#
-#     return
 
-# if __name__ == '__main__':
-#     user_input()
+def main():
+
+    # User name input
+    user_name = st.text_input("Please enter your name:")
+
+    if user_name:
+
+        st.markdown("""
+             <style>
+                 .stMultiSelect [data-baseweb="select"] span{
+                     max-width: none !important;
+                     white-space: normal !important;
+                     overflow: visible !important;
+                     text-overflow: clip !important;
+                 }
+             </style>
+             """, unsafe_allow_html=True)
+        # Initialize session state for selections
+        if 'selected_players' not in st.session_state:
+            st.session_state.selected_players = []
+
+        st.markdown("""#### <b><u>Player Selection</u></b>""", unsafe_allow_html=True)
+        st.write("**Ignore the the message that says 'You can only select up to x options. Remove an option first.' \n"
+                 "That message will pop up when you've picked the proper amount of players in that section.")
+
+        # QB Selection (2 players)
+        st.header("Quarterback Selection")
+        qb_options = df[df['Position'] == 'QB']['Player_Team'].tolist()
+        selected_qb = st.multiselect("Select 2 QBs:", qb_options, max_selections=2)
+
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+
+        # RB Selection (4 players)
+        st.header("Running Back Selection")
+        rb_options = df[df['Position'] == 'RB']['Player_Team'].tolist()
+        selected_rbs = st.multiselect("Select 4 RBs:", rb_options, max_selections=4)
+
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+
+        # WR Selection (4 players)
+        st.header("Wide Receiver Selection")
+        wr_options = df[df['Position'] == 'WR']['Player_Team'].tolist()
+        selected_wrs = st.multiselect("Select 4 WRs:", wr_options, max_selections=4)
+
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+
+        # te Selection (1 player)
+        st.header("Tight End Selection")
+        te_options = df[df['Position'] == 'TE']['Player_Team'].tolist()
+        selected_tes = st.multiselect("Select 2 TEs:", te_options, max_selections=2)
+
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+
+        # Flex Selection (1 player from RB/WR/TE) 1.5x
+        st.header("Flex (RB, WR, or TE) Selection - 1.5x Points!!")
+        # Remove already selected players from options
+        selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes
+        flex_options1 = df[(~df['Player_Team'].isin(selected_players_so_far)) & (df['Position'].isin(['RB','WR','TE']))]['Player_Team'].tolist()
+        selected_flex1 = st.multiselect("Select 1 Flex 1.5x:", flex_options1, max_selections=1)
+
+        # Flex Selection (1 player from RB/WR/TE)
+        st.header("Flex (RB, WR, or TE) Selection (regular scoring)")
+        # Remove already selected players from options
+        selected_players_so_far = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex1
+        flex_options2 = df[(~df['Player_Team'].isin(selected_players_so_far)) & (df['Position'].isin(['RB','WR','TE']))]['Player_Team'].tolist()
+        selected_flex2 = st.multiselect("Select 1 Flex:", flex_options2, max_selections=1)
+
+        # Kicker (1 player from K)
+        st.header("Kicker Selection")
+        k_options = df[df['Position'] == 'K']['Player_Team'].tolist()
+        selected_k = st.multiselect("Select 1 K:", k_options, max_selections=1)
+
+        # DST (1 player from K)
+        st.header("Defense/Special Teams Selection")
+        dst_options = df[df['Position'] == 'DST']['Player_Team'].tolist()
+        selected_dst = st.multiselect("Select 1 DST:", dst_options, max_selections=1)
+
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+        st.markdown("")
+
+        # Validate team selections
+        all_selections = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex1 + selected_flex2 + selected_k + selected_dst
+
+        # Button to finalize team
+        if st.button("Validate Team"):
+            if len(selected_qb) != 2:
+                st.error("Please select exactly 2 Quarterback")
+            elif len(selected_rbs) != 4:
+                st.error("Please select exactly 4 Running Backs")
+            elif len(selected_wrs) != 4:
+                st.error("Please select exactly 4 Wide Receivers")
+            elif len(selected_tes) != 2:
+                st.error("Please select exactly 2 Tight Ends")
+            elif len(selected_flex1) != 1:
+                st.error("Please select exactly 1 Flex 1.5x Player")
+            elif len(selected_flex2) != 1:
+                st.error("Please select exactly 1 Flex (regular scoring) Player")
+            elif len(selected_k) != 1:
+                st.error("Please select exactly 1 Kicker")
+            elif len(selected_dst) != 1:
+                st.error("Please select exactly 1 Defense/Special Teams")
+            else:
+                # Check for team violations
+                team_violations = validate_team_selection(all_selections)
+
+                if team_violations:
+                    # Detailed error message about team violations
+                    error_message = "Error: You have too many players from the following team(s):\n"
+                    for team, players in team_violations.items():
+                        error_message += f"- {team}: {', '.join(players)}\n"
+                    st.error(error_message)
+                # else:
+                #     st.success(f"Team successfully created for {user_name}!")
+                #     # Display final team
+                #     st.write("Your Team:")
+                #     for player in all_selections:
+                #         player_info = df[df['Player_Team'] == player].iloc[0]
+                #         st.write(f"{player} - {player_info['Position']}")
+
+                else:
+                    # Attempt to save to Google Sheets
+                    if save_team_to_sheets(user_name, all_selections):
+                        st.success(f"Team successfully created and saved for {user_name}!")
+                        # Display final team
+                        st.write("Take a screenshot of your team:")
+                        for player in all_selections:
+                            player_info = df[df['Player_Team'] == player].iloc[0]
+                            st.write(f"{player}")
+                    else:
+                        st.error("Failed to save team to Google Sheets")
+
+    return
+
+if __name__ == '__main__':
+    user_input()
