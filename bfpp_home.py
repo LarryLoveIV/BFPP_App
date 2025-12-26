@@ -21,9 +21,8 @@ st.markdown("""#### <b><u>Positions</u></b>
 2 QBs  
 4 RBs  
 4 WRs  
-2 TEs  
-1 Flex (RB,WR, or TE) - 1.5x Points!  
-1 Flex (RB,WR, or TE)  
+2 TEs   
+2 Flex (RB,WR, or TE)  
 1 Def/Special Teams  
 1 Kicker
 """, unsafe_allow_html=True)
