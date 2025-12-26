@@ -4,7 +4,7 @@ import functions as func
 st.markdown("""## <b><u>2025 Burholme Fantasy Playoff Pool</u></b>""", unsafe_allow_html=True)
 st.markdown("""**One entry per person - \$20 Venmo @Larry-LoveIV or CashApp \$LarryLoveIV. Build one team to ride throughout the playoffs and get the highest cumulative score through the Super Bowl.**
 
-**Last season we had 37 entries for a total pot of $740 - $600 to 1st, $100 to 2nd, $40 to 3rd. Let's try to get a bigger pot this year - if we get to 40 entries I think it would be
+**Last season we had 37 entries for a total pot of \$740 \- \$600 to 1st, \$100 to 2nd, \$40 to 3rd. Let's try to get a bigger pot this year - if we get to 40 entries I think it would be
 worth it to pay out to more people, something like Top 5.**
 
 
