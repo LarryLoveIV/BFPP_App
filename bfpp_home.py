@@ -4,17 +4,17 @@ import functions as func
 st.markdown("""## <b><u>2025 Burholme Fantasy Playoff Pool</u></b>""", unsafe_allow_html=True)
 st.markdown("""**One entry per person - \$20 Venmo @Larry-LoveIV or CashApp \$LarryLoveIV. Build one team to ride throughout the playoffs and get the highest cumulative score through the Super Bowl.**
 
-**Top 3 cumulative scores will earn prizes. Last season we had 29 entries for a total pot of $580. Let's try to get a bigger pot this year - if we do, the prizes will look like this:**
+**Last season we had 37 entries for a total pot of $740 - $600 to 1st, $100 to 2nd, $40 to 3rd. Let's try to get a bigger pot this year - if we get to 40 entries I think it would be
+worth it to pay out to more people, something like Top 5.**
 
-**1st - Remaining pot \(\$460 if we reach 30 entries\)  \n2nd - \$100  \n3rd - \$40**
 
 **Submissions must be in before kickoff of the first wildcard playoff game: Saturday Jan. 11th @ 4:30PM EST.**""")
 st.markdown("""#### <b><u>Team Building Rules</u></b>  
-Fill the positions below using players from the all the playoff teams - you can use no more than 2 players from the 
-same team. i.e: you can take Goff and St. Brown, but you can't have Goff, St. Brown, and Gibbs/Lions DST/Jake Bates.
+Fill the positions below using players from all the playoff teams - you can use no more than 2 players from the 
+same team. i.e: you can take Stafford and Nacua, but you can't have Stafford, Nacua, and Rams Defense/Special Teams - Kickers and D/ST count toward same team count. 
 
-Your first flex position will get you 1.5x points. Last year we had a 2x points flex position, 
-but I think 1.5x makes it less important to get that position correct and hopefully diversifies the player ownership there.""", unsafe_allow_html=True)
+Big change this year - no multiplier flex spot. Last 2 seasons we experimented with that and it just made everyone use the same player. No need to worry about getting 
+the correct player in the multiplier this year because we're not using it.""", unsafe_allow_html=True)
 
 #
 st.markdown("""#### <b><u>Positions</u></b>  
