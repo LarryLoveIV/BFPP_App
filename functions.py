@@ -226,7 +226,7 @@ def main():
 
                 else:
                     # Attempt to save to Google Sheets
-                    if save_team_to_sheets(user_name, all_selections):
+                    if save_team_to_sheets(user_name, email, all_selections):
                         st.success(f"Team successfully created and saved for {user_name}!")
                         # Display final team
                         st.write("Take a screenshot of your team:")
