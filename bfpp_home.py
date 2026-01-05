@@ -4,16 +4,16 @@ import functions as func
 st.markdown("""## <b><u>2025 Burholme Fantasy Playoff Pool</u></b>""", unsafe_allow_html=True)
 st.markdown("""**One entry per person - \$20 Venmo @Larry-LoveIV or CashApp \$LarryLoveIV. Build one team to ride throughout the playoffs and get the highest cumulative score through the Super Bowl.**
 
-**Last season we had 37 entries for a total pot of \$740 \- \$600 to 1st, \$100 to 2nd, \$40 to 3rd. Let's try to get a bigger pot this year - if we get to 40 entries I think it would be
-worth it to pay out to more people, something like Top 5.**
+**Last season we had 36 entries for a total pot of \$720 \- \$600 to 1st, \$100 to 2nd, \$20 to 3rd. Let's try to get a bigger pot this year - if we get to 40 entries I think it would be
+worth it to pay out to more people, something like Top 5 and maybe a flatter payout.**
 
 
-**Submissions must be in before kickoff of the first wildcard playoff game: Saturday Jan. 11th @ 4:30PM EST.**""")
+**Submissions must be in before kickoff of the first wildcard playoff game: Saturday Jan. 10th @ 4:30PM EST.**""")
 st.markdown("""#### <b><u>Team Building Rules</u></b>  
 Fill the positions below using players from all the playoff teams - you can use no more than 2 players from the 
 same team. i.e: you can take Stafford and Nacua, but you can't have Stafford, Nacua, and Rams Defense/Special Teams - Kickers and D/ST count toward same team count. 
 
-Big change this year - no multiplier flex spot. Last 2 seasons we experimented with that and it just made everyone use the same player. No need to worry about getting 
+**Big change this year** - no multiplier flex spot. Last 2 seasons we experimented with that and it just made everyone use the same player. No need to worry about getting 
 the correct player in the multiplier this year because we're not using it.""", unsafe_allow_html=True)
 
 #
