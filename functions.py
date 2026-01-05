@@ -23,7 +23,7 @@ def connect_to_google_sheets():
         st.error(f"Error connecting to Google Sheets: {e}")
         return None
 
-def save_team_to_sheets(user_name, email-phone, selected_players):
+def save_team_to_sheets(user_name, emailPhone, selected_players):
     """
     Save the selected team to Google Sheets
     """
@@ -36,7 +36,7 @@ def save_team_to_sheets(user_name, email-phone, selected_players):
         # You can customize the columns as needed
         row_data = [
             user_name,
-            email-phone,
+            emailPhone,
             selected_players[0],  # QB1
             selected_players[1],  # QB2
             selected_players[2],  # RB1
@@ -96,7 +96,7 @@ def main():
     user_name = st.text_input("Please enter your name:")
 
     # User name input
-    email-phone = st.text_input("Enter your email (preferred) or phone number (more work for me but that's fine) if you want the link to the leaderboard and any other updates:")
+    emailPhone = st.text_input("Enter your email (preferred) or phone number (more work for me but that's fine) if you want the link to the leaderboard and any other updates:")
 
     if user_name:
 
@@ -226,7 +226,7 @@ def main():
 
                 else:
                     # Attempt to save to Google Sheets
-                    if save_team_to_sheets(user_name, email-phone, all_selections):
+                    if save_team_to_sheets(user_name, emailPhone, all_selections):
                         st.success(f"Team successfully created and saved for {user_name}!")
                         # Display final team
                         st.write("Take a screenshot of your team:")
