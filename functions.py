@@ -189,7 +189,7 @@ def main():
         all_selections = selected_qb + selected_rbs + selected_wrs + selected_tes + selected_flex2 + selected_k + selected_dst #+ selected_flex1
 
         # Button to finalize team
-        if st.button("Validate Team"):
+        if st.button("Submit Team"):
             if len(selected_qb) != 2:
                 st.error("Please select exactly 2 Quarterback")
             elif len(selected_rbs) != 4:
